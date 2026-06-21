@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تولدت مبارک ❤️</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;700;900&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazir', sans-serif;
+            background: linear-gradient(145deg, #1a0b2e, #2d1b4e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 30px 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            min-height: 550px;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #f3d9ff;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 215, 255, 0.2);
+            margin-bottom: 25px;
+        }
+
+        .header h2 {
+            font-weight: 300;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .header .heart {
+            color: #ff4d6d;
+            font-size: 1.8rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        /* صفحات داستانی */
+        .story-page {
+            color: #f0e6ff;
+            padding: 10px 5px;
+        }
+
+        .story-page .big-name {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #ff1744;
+            text-shadow: 0 0 30px #ff1744, 0 0 60px #ff6b6b;
+            display: block;
+            text-align: center;
+            margin: 15px 0;
+            animation: glowRed 2s infinite alternate;
+        }
+
+        @keyframes glowRed {
+            0% { text-shadow: 0 0 20px #ff1744, 0 0 40px #ff4d6d; }
+            100% { text-shadow: 0 0 40px #ff1744, 0 0 80px #ff6b6b; }
+        }
+
+        .story-page p {
+            font-size: 1.15rem;
+            line-height: 2.2;
+            margin: 18px 0;
+            text-align: justify;
+            padding: 0 5px;
+        }
+
+        .story-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #ffb347, #ff6b6b);
+            border: none;
+            border-radius: 60px;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Vazir', sans-serif;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .story-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+        }
+
+        .story-btn.funny {
+            background: linear-gradient(135deg, #a855f7, #d946ef);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
+        }
+
+        .story-btn.funny:hover {
+            box-shadow: 0 12px 35px rgba(168, 85, 247, 0.5);
+        }
+
+        .story-btn.green {
+            background: linear-gradient(135deg, #22d3ee, #10b981);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .story-btn.green:hover {
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.5);
+        }
+
+        .story-btn.pink {
+            background: linear-gradient(135deg, #ec4899, #f43f5e);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+        }
+
+        .story-btn.pink:hover {
+            box-shadow: 0 12px 35px rgba(236, 72, 153, 0.5);
+        }
+
+        /* کارت سوالات */
+        .question-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 30px;
+            padding: 25px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.4s;
+            margin-bottom: 20px;
+        }
+
+        .question-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .question-text {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-align: center;
+            line-height: 1.8;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .question-text .emoji-big {
+            font-size: 2rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.07);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            padding: 14px 18px;
+            border-radius: 50px;
+            color: #f0e6ff;
+            font-size: 1.05rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-align: center;
+            font-family: 'Vazir', sans-serif;
+            backdrop-filter: blur(4px);
+        }
+
+        .option-btn:hover {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: #ffd700;
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+        }
+
+        /* فقط سبز شدن گزینه انتخاب شده - بدون درست یا غلط */
+        .option-btn.selected {
+            background: rgba(0, 200, 150, 0.3);
+            border-color: #00e6b0;
+            box-shadow: 0 0 30px rgba(0, 230, 176, 0.3);
+        }
+
+        .option-btn.gift {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: #ffd700;
+        }
+
+        .option-btn.gift.selected {
+            background: rgba(0, 200, 150, 0.3);
+            border-color: #00e6b0;
+            box-shadow: 0 0 30px rgba(0, 230, 176, 0.3);
+        }
+
+        .next-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-top: 18px;
+            background: linear-gradient(135deg, #ffb347, #ff6b6b);
+            border: none;
+            border-radius: 60px;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Vazir', sans-serif;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .next-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+        }
+
+        .next-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* صفحه تولد */
+        .birthday-page {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .birthday-page h1 {
+            font-size: 2.8rem;
+            color: #ffd700;
+            text-shadow: 0 0 30px #ffb347, 0 0 60px #ff6b6b;
+            margin: 10px 0;
+            animation: glow 1.8s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #ffb347, 0 0 40px #ff6b6b; }
+            100% { text-shadow: 0 0 40px #ffd700, 0 0 80px #ff4d6d; }
+        }
+
+        .birthday-page .big-heart {
+            font-size: 5rem;
+            animation: pulse 1s infinite;
+            display: inline-block;
+        }
+
+        .birthday-page p {
+            color: #f3d9ff;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            line-height: 2.2;
+            text-align: justify;
+            padding: 0 5px;
+        }
+
+        .birthday-page .poem {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            font-size: 1.3rem;
+            color: #ffd700;
+            line-height: 2.5;
+        }
+
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            top: -20px;
+            animation: confettiFall 5s linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+
+        .reset-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-family: 'Vazir', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 25px;
+        }
+
+        .reset-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0 10px;
+            flex-wrap: wrap;
+        }
+
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .step-dot.active {
+            background: #ffd700;
+            box-shadow: 0 0 20px #ffb347;
+            transform: scale(1.3);
+        }
+
+        .step-dot.done {
+            background: #00e6b0;
+        }
+
+        @media (max-width: 480px) {
+            .app-container { padding: 20px 15px; }
+            .story-page p { font-size: 1rem; }
+            .story-page .big-name { font-size: 2.5rem; }
+            .question-text { font-size: 1.2rem; }
+            .birthday-page h1 { font-size: 2.2rem; }
+            .birthday-page p { font-size: 1rem; }
+            .birthday-page .poem { font-size: 1.1rem; }
+            .option-btn { font-size: 0.95rem; padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="confettiContainer" class="confetti"></div>
+
+    <div class="app-container" id="app">
+
+        <div class="header">
+            <h2>✨ برای عزیزترین</h2>
+            <span class="heart">❤️</span>
+        </div>
+
+        <div class="step-indicator" id="stepDots"></div>
+
+        <div id="dynamicContent"></div>
+
+    </div>
+
+    <script>
+        // ============================================================
+        //  داده‌های داستان (صفحات مقدماتی)
+        // ============================================================
+        const storyPages = [
+            {
+                type: 'story',
+                content: `
+                    <div class="story-page">
+                        <p>سلام <span class="big-name">شهناز</span></p>
+                        <p>من یک جادوگر هستم که از همه چیز خبر دارم.</p>
+                        <button class="story-btn" onclick="goToNextStory()">خب!</button>
+                    </div>
+                `
+            },
+            {
+                type: 'story',
+                content: `
+                    <div class="story-page">
+                        <p>مثلا من خبر دارم که تو یک دختر خوشگل روستایی هستی! 😄</p>
+                        <button class="story-btn funny" onclick="goToNextStory()">😂 آخه جادوگر!</button>
+                    </div>
+                `
+            },
+            {
+                type: 'story',
+                content: `
+                    <div class="story-page">
+                        <p>شوخی کردم عزیزم. به دل نگیر. تو یقینا پایتخت‌نشین هستی. هر کجای دنیا که باشی.</p>
+                        <p>من میدونم که عاشق آش ماکارونی هستی. یا مثلا میدونم از شعر لذت میبری. سفر کردن بخشی از وجودته و بینهایت شجاع و توانمندی.</p>
+                        <button class="story-btn green" onclick="goToNextStory()">از شما مرسی 🙏</button>
+                    </div>
+                `
+            },
+            {
+                type: 'story',
+                content: `
+                    <div class="story-page">
+                        <p>عجیبتر اینکه تو نسبت به هر پیش آمدی تو زندگی عقب نشینی نمیکنی. عاشق عاشق شدنی و صبوری میکنی در مقابل خار روزگار.</p>
+                        <button class="story-btn" onclick="goToNextStory()">ها بخدا 🤯</button>
+                    </div>
+                `
+            },
+            {
+                type: 'story',
+                content: `
+                    <div class="story-page">
+                        <p>حالا وقت تسته. اگر درست بگی یک هدیه باور نکردنی به تو میدم.</p>
+                        <p style="font-size:0.95rem; color:#d4bfff;">فقط شرطش اینه که از هر جواب یک اسکرین‌شات بگیری و پیش خودت باشه تا آخرش بهت بگم که برای نماینده‌م ارسال کنی تا اون به دست من برسونه.</p>
+                        <p style="font-weight:700; color:#ffd700;">هر وقت آماده‌ای روی گزینه زیر بزن.</p>
+                        <button class="story-btn funny" onclick="startQuiz()">🎯 شروع مسابقه</button>
+                    </div>
+                `
+            }
+        ];
+
+        // ============================================================
+        //  داده‌های سوالات (۶ سوال) - پاسخ‌ها فقط برای نمایش، الزامی نیست
+        // ============================================================
+        const questions = [
+            {
+                image: 'https://via.placeholder.com/600x400/3a1f5e/ffd700?text=جمعه+ها',
+                question: 'روزهای جمعه وقت چه کاری است؟',
+                options: ['درس خواندن', 'رفتن به رستوران', 'دیدن فیلم', 'جمعه بازار']
+            },
+            {
+                image: 'https://via.placeholder.com/600x400/2a1a4a/ffa500?text=همسایگی+غزنی',
+                question: 'کدام استان در همسایگی غزنی قرار دارد؟',
+                options: ['مزارشریف', 'هرات', 'بوشهر', 'بامیان']
+            },
+            {
+                image: 'https://via.placeholder.com/600x400/1f2a4a/ff6b6b?text=کافه',
+                question: 'نام کافه‌ای که در آن امتحانات ترم اول را گذراندی؟',
+                options: ['رشن', 'بوهووووووو', 'دوریا', 'زمان']
+            },
+            {
+                image: 'https://via.placeholder.com/600x400/4a1a2a/ffd700?text=امام+رضا',
+                question: 'امام رضا، امام چندم شیعیان است؟',
+                options: ['اول', 'دوم', 'هفتم', 'هشتم']
+            },
+            {
+                image: 'https://via.placeholder.com/600x400/2a4a3a/ffa500?text=معیار+رابطه',
+                question: 'کدام یک معیار رابطه شما خواهد بود؟',
+                options: ['قد بلند', 'چشمان درشت', 'ریش', 'موتور']
+            },
+            {
+                image: 'https://via.placeholder.com/600x400/5a1a4a/ffd700?text=🎁+هدیه',
+                question: 'این سوال نیست و امتیازش رو به عنوان هدیه دریافت کردی ولی یکی از گزینه‌ها رو باید انتخاب کنی.',
+                options: ['صفر', 'پنج', 'هفت', 'نه'],
+                isGift: true
+            }
+        ];
+
+        // ============================================================
+        //  داده‌های داستان پایانی (بعد از سوالات)
+        // ============================================================
+        const endingPages = [
+            {
+                content: `
+                    <div class="story-page">
+                        <p>تا همینجا کافیه. مرسی که تا اینجا وقت گذاشتی.</p>
+                        <p>راستش همین الان از راز جدیدی با خبر شدم. کسی رو در زندگیت میبینم که الان فاصله زیادی باهات داره. دلش رو میبینم. میخوایی تو هم بدونی تو دلش چی هست؟</p>
+                        <button class="story-btn pink" onclick="goToNextEnding()">آره</button>
+                    </div>
+                `
+            },
+            {
+                content: `
+                    <div class="story-page">
+                        <p>همینطور که گفتم، کسی هست تو زندگیت که فاصله زیادی داره. تو قلبش بینهایت دوستت داره و انتظار میکشه که بتونه باز ببینتت.</p>
+                        <p>حتی همین الان هم بی‌قراری شدید میکنه تا بهش زنگ بزنی که بتونه صدات رو بشنوه و بهت بگه که دوستت داره. بهت بگه که چقدر براش مهمی. بهت بگه که چقدر زیاد آرزو این رو داره که تو رو موفق و بلند مرتبه ببینه.</p>
+                        <p>فکر کنم تو اون رو بشناسی...</p>
+                        <button class="story-btn green" onclick="goToNextEnding()">آره فکر کنم بشناسمش</button>
+                    </div>
+                `
+            },
+            {
+                content: `
+                    <div class="story-page">
+                        <p>راستی اون راز بزرگ رو بهت نگفتم. میخوای بدونی اون راز چیه؟</p>
+                        <button class="story-btn funny" onclick="goToNextEnding()">آره بگو حتما</button>
+                    </div>
+                `
+            },
+            {
+                content: `
+                    <div class="birthday-page">
+                        <div class="big-heart">🎂</div>
+                        <h1>تولدت مبارک شهناز عزیزم ❤️</h1>
+                        <p>تو یکسال جوان‌تر و زیباتر شدی. برات کلی آرزو فوق‌العاده دارم و امیدوارم تو هر قسمت از زندگیت موفقیت بسیاری کسب کنی.</p>
+                        <p>حیف که نمیشه از طریق این سایت رقصید و آهنگ پخش کرد. ولی بذار یه شعر باهم بخونیم.</p>
+                        <div class="poem">
+                            🎵 خان خانما عزیز دلا، جیگر دلا، چیو از کجا گرفتی...<br />
+                            کار عاشقی چنین است بکنم یا نکنممممم 🎵
+                        </div>
+                        <p>یه هدیه بسیار گرون‌قیمت در انتظارت میکشه. فقط کافیه اسکرین‌شات پاسخ‌هات رو بفرستی به نماینده‌ام. خودت میدونی با کی هستم ;)</p>
+                        <p style="font-size:1.5rem; color:#ffd700; font-weight:700;">موفق و پیروز باشی عزیزدلم ❤️</p>
+                        <button class="reset-btn" onclick="resetApp()">🔄 دوباره از اول</button>
+                    </div>
+                `
+            }
+        ];
+
+        // ============================================================
+        //  وضعیت اپ
+        // ============================================================
+        let currentStoryIndex = 0;
+        let currentStep = 0;
+        let currentEndingIndex = 0;
+        let selectedOption = null;
+        let isAnswered = false;
+        let quizStarted = false;
+        let quizFinished = false;
+        const totalSteps = questions.length;
+
+        const dynamicEl = document.getElementById('dynamicContent');
+        const dotsContainer = document.getElementById('stepDots');
+
+        // ============================================================
+        //  توابع داستان مقدماتی
+        // ============================================================
+        function renderStory() {
+            dotsContainer.innerHTML = '';
+            if (currentStoryIndex < storyPages.length) {
+                dynamicEl.innerHTML = storyPages[currentStoryIndex].content;
+            }
+        }
+
+        function goToNextStory() {
+            currentStoryIndex++;
+            if (currentStoryIndex < storyPages.length) {
+                renderStory();
+            } else {
+                startQuiz();
+            }
+        }
+
+        // ============================================================
+        //  شروع مسابقه
+        // ============================================================
+        function startQuiz() {
+            quizStarted = true;
+            currentStep = 0;
+            isAnswered = false;
+            selectedOption = null;
+            renderDots();
+            renderQuestion();
+        }
+
+        // ============================================================
+        //  رندر نقطه‌های پیشرفت
+        // ============================================================
+        function renderDots() {
+            dotsContainer.innerHTML = '';
+            if (!quizStarted || quizFinished) return;
+            for (let i = 0; i < totalSteps; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'step-dot';
+                if (i === currentStep) dot.classList.add('active');
+                else if (i < currentStep) dot.classList.add('done');
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // ============================================================
+        //  صفحات پایانی (بعد از سوالات)
+        // ============================================================
+        function renderEnding() {
+            dotsContainer.innerHTML = '';
+            quizFinished = true;
+            if (currentEndingIndex < endingPages.length) {
+                dynamicEl.innerHTML = endingPages[currentEndingIndex].content;
+                if (currentEndingIndex === endingPages.length - 1) {
+                    launchConfetti();
+                }
+            }
+        }
+
+        function goToNextEnding() {
+            currentEndingIndex++;
+            if (currentEndingIndex < endingPages.length) {
+                renderEnding();
+            }
+        }
+
+        // ============================================================
+        //  رندر سوال - بدون درست یا غلط، فقط سبز شدن گزینه انتخاب شده
+        // ============================================================
+        function renderQuestion() {
+            if (currentStep >= totalSteps) {
+                currentEndingIndex = 0;
+                renderEnding();
+                return;
+            }
+
+            const q = questions[currentStep];
+            let optionsHtml = '';
+            q.options.forEach((opt, idx) => {
+                let btnClass = 'option-btn';
+                if (q.isGift) btnClass += ' gift';
+                // فقط گزینه‌ای که انتخاب شده سبز میشه
+                if (selectedOption === idx) btnClass += ' selected';
+                optionsHtml += `
+                    <button class="${btnClass}" data-index="${idx}" ${isAnswered ? 'disabled' : ''}>
+                        ${opt}
+                    </button>
+                `;
+            });
+
+            const nextDisabled = isAnswered ? '' : 'disabled';
+
+            dynamicEl.innerHTML = `
+                <div class="question-card">
+                    <img src="${q.image}" alt="سوال تصویری" class="question-image" />
+                    <div class="question-text">
+                        ${q.question}
+                        ${q.isGift ? '<span class="emoji-big">🎁✨</span>' : ''}
+                    </div>
+                    <div class="options" id="optionsContainer">
+                        ${optionsHtml}
+                    </div>
+                </div>
+                <button class="next-btn" id="nextBtn" ${nextDisabled}>
+                    ${currentStep === totalSteps - 1 ? '🎁 صفحه بعد' : '⬅️ سوال بعدی'}
+                </button>
+            `;
+
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    if (isAnswered) return;
+                    const idx = parseInt(this.dataset.index);
+                    handleOptionClick(idx);
+                });
+            });
+
+            document.getElementById('nextBtn').addEventListener('click', function() {
+                if (isAnswered) {
+                    currentStep++;
+                    isAnswered = false;
+                    selectedOption = null;
+                    renderDots();
+                    renderQuestion();
+                }
+            });
+
+            renderDots();
+        }
+
+        // ============================================================
+        //  مدیریت کلیک روی گزینه - فقط سبز شدن، بدون بررسی درستی
+        // ============================================================
+        function handleOptionClick(idx) {
+            if (isAnswered) return;
+            selectedOption = idx;
+            isAnswered = true;
+            renderQuestion(); // بازرندر با گزینه‌ی سبز شده
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        // ============================================================
+        //  کانفتی
+        // ============================================================
+        function launchConfetti() {
+            const container = document.getElementById('confettiContainer');
+            container.innerHTML = '';
+            const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#ffe66d', '#ff4d6d', '#a8e6cf', '#ffb347', '#a855f7', '#ec4899'];
+            for (let i = 0; i < 100; i++) {
+                const piece = document.createElement('div');
+                piece.className = 'confetti-piece';
+                const size = Math.random() * 12 + 5;
+                piece.style.width = size + 'px';
+                piece.style.height = size * 0.6 + 'px';
+                piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.left = Math.random() * 100 + '%';
+                piece.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                piece.style.animationDelay = (Math.random() * 3) + 's';
+                piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                container.appendChild(piece);
+            }
+            setTimeout(() => { container.innerHTML = ''; }, 10000);
+        }
+
+        // ============================================================
+        //  ریست کامل
+        // ============================================================
+        function resetApp() {
+            currentStoryIndex = 0;
+            currentStep = 0;
+            currentEndingIndex = 0;
+            isAnswered = false;
+            selectedOption = null;
+            quizStarted = false;
+            quizFinished = false;
+            document.getElementById('confettiContainer').innerHTML = '';
+            renderStory();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================================
+        //  اجرای اولیه
+        // ============================================================
+        renderStory();
+    </script>
+
+</body>
+</html>
